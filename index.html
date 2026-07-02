@@ -3,155 +3,639 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Shree Krupa | Electric & Stationery Store</title>
+<title>Shree Krupa | Electric &amp; Stationery Store — Amravati</title>
+<meta name="description" content="Shree Krupa Electric & Stationery Store, Sainagar, Amravati — genuine electrical goods, wiring accessories, notebooks, pens and office & school essentials at fair prices.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700;9..144,900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
---navy:#0f172a;--gold:#d4af37;--light:#f8fafc;--text:#1e293b;
-}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Arial,sans-serif;color:var(--text);background:var(--light);line-height:1.6}
-header{position:fixed;top:0;width:100%;background:rgba(15,23,42,.95);color:#fff;padding:18px 8%;display:flex;justify-content:space-between;z-index:1000}
-header a{color:#fff;text-decoration:none;margin-left:20px}
-.hero{height:100vh;background:linear-gradient(rgba(15,23,42,.75),rgba(15,23,42,.75)),url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?auto=format&fit=crop&w=1600&q=80') center/cover;display:flex;align-items:center;padding:0 8%;color:#fff}
-.hero h1{font-size:60px;max-width:700px}
-.hero p{max-width:650px;margin:20px 0}
-.btn{display:inline-block;padding:14px 28px;border-radius:30px;text-decoration:none;font-weight:bold}
-.gold{background:var(--gold);color:#000}
-.white{background:#fff;color:#000}
-section{padding:90px 8%}
+  :root{
+    --navy:#10233D;
+    --navy-deep:#0A1626;
+    --copper:#BC6A34;
+    --copper-light:#D9905E;
+    --marigold:#E7A63C;
+    --paper:#F5F1E6;
+    --paper-dim:#EBE3D0;
+    --paper-line:#D9CFB4;
+    --ink:#1C1A15;
+    --ink-soft:#4B4636;
+    --wire-green:#4B7A57;
+    --radius:2px;
+    --shadow-card: 0 1px 0 rgba(28,26,21,0.06), 0 8px 20px -12px rgba(16,35,61,0.35);
+  }
 
-.card{
-    background:#fff;
-    padding:30px;
-    border-radius:18px;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-    transition:.3s;
-}
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', system-ui, sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .mono{font-family:'IBM Plex Mono', monospace;}
 
-.card:hover{
-    transform:translateY(-8px);
-}
-
-.card h3{
-    margin-bottom:15px;
+  h1,h2,h3,h4{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    margin:0 0 .4em 0;
     color:var(--navy);
-}
+    letter-spacing:-0.01em;
+  }
 
-.card p{
-    margin-top:10px;
-    font-size:15px;
-    line-height:1.8;
-    color:#64748b;
-}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
 
-.dark .card{
-    background:rgba(255,255,255,.08);
-    backdrop-filter:blur(12px);
-    border:1px solid rgba(255,255,255,.15);
-    color:#fff;
-}
+  /* ---------- FOCUS STATES ---------- */
+  a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible{
+    outline:3px solid var(--marigold);
+    outline-offset:2px;
+  }
 
-.dark .card h3{
-    color:#fff;
-}
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--navy);
+    border-bottom:4px solid var(--marigold);
+  }
+  .header-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    max-width:1120px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand-mark{
+    width:42px;height:42px;border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, var(--marigold), var(--copper) 70%);
+    display:flex;align-items:center;justify-content:center;
+    color:var(--navy-deep); font-family:'Fraunces',serif; font-weight:900; font-size:18px;
+    flex:none;
+    box-shadow: inset 0 0 0 3px rgba(10,22,38,0.25);
+  }
+  .brand-text{color:var(--paper);}
+  .brand-text .name{font-family:'Fraunces',serif; font-weight:700; font-size:20px; line-height:1.1; letter-spacing:0.01em;}
+  .brand-text .tag{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase; color:var(--marigold); margin-top:2px;}
 
-.dark .card p{
-    color:#e2e8f0;
-}
+  nav.primary{display:flex; align-items:center; gap:28px;}
+  nav.primary a{
+    color:var(--paper); text-decoration:none; font-size:14.5px; font-weight:500;
+    position:relative; padding:6px 0;
+  }
+  nav.primary a::after{
+    content:""; position:absolute; left:0; right:0; bottom:0; height:2px;
+    background:var(--marigold); transform:scaleX(0); transform-origin:left;
+    transition:transform .25s ease;
+  }
+  nav.primary a:hover::after, nav.primary a:focus-visible::after{transform:scaleX(1);}
 
-h2{text-align:center;font-size:40px;margin-bottom:40px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px}
-.card{background:#fff;padding:25px;border-radius:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-.dark{background:var(--navy);color:#fff}
-footer{background:#0b1220;color:#fff;text-align:center;padding:25px}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:11px 20px; border-radius:var(--radius);
+    font-weight:600; font-size:14.5px; text-decoration:none;
+    border:1.5px solid transparent; cursor:pointer;
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .btn-primary{background:var(--marigold); color:var(--navy-deep);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 18px -8px rgba(231,166,60,0.55);}
+  .btn-outline{background:transparent; border-color:rgba(245,241,230,0.4); color:var(--paper);}
+  .btn-outline:hover{border-color:var(--paper); background:rgba(245,241,230,0.08);}
+  .btn-copper{background:var(--copper); color:#fff;}
+  .btn-copper:hover{transform:translateY(-2px); box-shadow:0 10px 18px -8px rgba(188,106,52,0.55);}
+
+  .nav-toggle{display:none; background:none; border:none; color:var(--paper); font-size:26px; cursor:pointer; padding:4px;}
+
+  /* ---------- HERO / SIGNBOARD ---------- */
+  .hero{
+    background:
+      radial-gradient(ellipse at top, rgba(231,166,60,0.10), transparent 55%),
+      var(--navy-deep);
+    padding:64px 0 84px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{ /* subtle circuit-trace texture */
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      linear-gradient(rgba(245,241,230,0.045) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(245,241,230,0.045) 1px, transparent 1px);
+    background-size:34px 34px;
+    mask-image:radial-gradient(ellipse at 50% 0%, black, transparent 75%);
+    pointer-events:none;
+  }
+  .bulb-string{
+    display:flex; justify-content:center; gap:38px;
+    padding-bottom:26px; position:relative; z-index:2;
+  }
+  .bulb{
+    width:10px;height:10px;border-radius:50%;
+    background:var(--marigold);
+    box-shadow:0 0 10px 3px rgba(231,166,60,0.65);
+    animation:flicker 3.4s ease-in-out infinite;
+  }
+  .bulb:nth-child(2n){animation-delay:.6s;}
+  .bulb:nth-child(3n){animation-delay:1.3s;}
+  .bulb:nth-child(4n){animation-delay:.3s;}
+  @keyframes flicker{
+    0%,100%{opacity:1;}
+    45%{opacity:.55;}
+    50%{opacity:1;}
+    72%{opacity:.7;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .bulb{animation:none;}
+  }
+
+  .signboard{
+    position:relative; z-index:2;
+    max-width:760px; margin:0 auto;
+    background:linear-gradient(180deg, #142a48, #0f2038);
+    border:1px solid rgba(231,166,60,0.35);
+    border-radius:4px;
+    padding:52px 44px 44px;
+    text-align:center;
+    box-shadow:0 30px 60px -20px rgba(0,0,0,0.55);
+  }
+  .signboard .bolt{
+    position:absolute; width:9px; height:9px; border-radius:50%;
+    background:radial-gradient(circle at 35% 30%, #d8d0b8, #8b8368);
+    box-shadow:inset 0 0 0 1px rgba(0,0,0,0.3);
+  }
+  .signboard .bolt.tl{top:12px;left:12px;} .signboard .bolt.tr{top:12px;right:12px;}
+  .signboard .bolt.bl{bottom:12px;left:12px;} .signboard .bolt.br{bottom:12px;right:12px;}
+
+  .eyebrow{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--marigold); margin-bottom:14px; display:inline-block;
+  }
+  .hero h1{
+    color:var(--paper); font-size:clamp(30px, 5vw, 46px); line-height:1.08; margin-bottom:16px;
+  }
+  .hero h1 em{color:var(--marigold); font-style:normal;}
+  .hero p.lede{
+    color:#C9D0DA; font-size:17px; max-width:520px; margin:0 auto 30px;
+  }
+  .hero .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap;}
+
+  .est-line{
+    text-align:center; margin-top:26px; color:#8B93A3; font-size:12.5px;
+    font-family:'IBM Plex Mono',monospace; letter-spacing:0.06em;
+  }
+
+  /* ---------- WIRE DIVIDER ---------- */
+  .wire-divider{
+    display:flex; align-items:center; gap:14px;
+    max-width:1120px; margin:0 auto; padding:0 28px;
+    color:var(--copper);
+  }
+  .wire-divider .node{
+    width:9px;height:9px;border-radius:50%;background:var(--copper); flex:none;
+    box-shadow:0 0 0 4px rgba(188,106,52,0.15);
+  }
+  .wire-divider .line{
+    flex:1; height:0; border-top:1.5px dashed var(--paper-line);
+  }
+  .wire-divider .label{
+    font-family:'IBM Plex Mono',monospace; font-size:11.5px; letter-spacing:0.16em;
+    text-transform:uppercase; color:var(--ink-soft); white-space:nowrap;
+  }
+
+  section{padding:70px 0;}
+  .section-head{max-width:620px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(26px,3.4vw,34px);}
+  .section-head p{color:var(--ink-soft); font-size:15.5px;}
+
+  /* ---------- CATEGORY / AISLE CARDS ---------- */
+  .aisles{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .aisle-card{
+    position:relative;
+    background:#fff;
+    border:1px solid var(--paper-line);
+    border-radius:var(--radius);
+    padding:28px 24px 24px;
+    box-shadow:var(--shadow-card);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .aisle-card:hover{transform:translateY(-4px); box-shadow:0 16px 30px -14px rgba(16,35,61,0.3);}
+  .aisle-card .bolt{
+    position:absolute; width:7px;height:7px;border-radius:50%;
+    background:var(--paper-line);
+  }
+  .aisle-card .bolt.tl{top:10px;left:10px;} .aisle-card .bolt.br{bottom:10px;right:10px;}
+  .aisle-tag{
+    font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:0.14em;
+    text-transform:uppercase; color:var(--copper); margin-bottom:10px; display:block;
+  }
+  .aisle-card h3{font-size:21px; margin-bottom:8px;}
+  .aisle-card > p{color:var(--ink-soft); font-size:14.5px; margin-bottom:16px;}
+  .chip-list{display:flex; flex-wrap:wrap; gap:8px; margin:0; padding:0; list-style:none;}
+  .chip-list li{
+    background:var(--paper-dim); border:1px solid var(--paper-line);
+    padding:6px 11px; border-radius:20px; font-size:12.8px; color:var(--ink);
+  }
+
+  /* ---------- WHY CHOOSE US ---------- */
+  .why-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--paper-line);}
+  .why-item{
+    padding:26px 22px; border-bottom:1px solid var(--paper-line); border-right:1px solid var(--paper-line);
+  }
+  .why-item:last-child{border-right:none;}
+  .why-mark{
+    width:34px;height:34px;border-radius:50%;
+    background:var(--navy); color:var(--marigold);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'IBM Plex Mono',monospace; font-weight:600; font-size:15px;
+    margin-bottom:14px;
+  }
+  .why-item h3{font-size:16.5px; margin-bottom:6px;}
+  .why-item p{font-size:14px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- ABOUT ---------- */
+  .about{
+    background:var(--navy); color:var(--paper);
+  }
+  .about .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:56px; align-items:center;}
+  .about h2{color:var(--paper);}
+  .about p{color:#C9D0DA; font-size:15.5px;}
+  .about-quote{
+    border-left:3px solid var(--marigold); padding-left:18px;
+    font-family:'Fraunces',serif; font-size:19px; font-weight:500; color:var(--paper);
+    margin:22px 0 0;
+  }
+  .ledger{
+    background:var(--navy-deep); border:1px solid rgba(231,166,60,0.25);
+    border-radius:4px; padding:26px 24px;
+  }
+  .ledger-row{
+    display:flex; justify-content:space-between; align-items:baseline;
+    padding:13px 0; border-bottom:1px dashed rgba(245,241,230,0.18);
+    font-size:14px;
+  }
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-row .k{color:#9FA9BA; font-family:'IBM Plex Mono',monospace; font-size:12px; letter-spacing:.04em;}
+  .ledger-row .v{color:var(--paper); font-weight:600; text-align:right;}
+
+  /* ---------- CONTACT ---------- */
+  .contact-wrap{display:grid; grid-template-columns:1fr 1fr; gap:30px;}
+  .receipt{
+    background:#fff; border:1px solid var(--paper-line); border-radius:2px;
+    padding:32px 30px; position:relative; box-shadow:var(--shadow-card);
+  }
+  .receipt::after{
+    content:""; position:absolute; left:0; right:0; bottom:-8px; height:16px;
+    background-image: linear-gradient(135deg, transparent 50%, var(--paper) 50%), linear-gradient(45deg, transparent 50%, var(--paper) 50%);
+    background-size: 16px 16px; background-position: bottom left;
+    background-repeat:repeat-x;
+  }
+  .receipt h3{font-size:12px; text-transform:uppercase; letter-spacing:.16em; font-family:'IBM Plex Mono',monospace; color:var(--copper); margin-bottom:20px;}
+  .info-row{display:flex; gap:14px; padding:14px 0; border-bottom:1px solid var(--paper-line);}
+  .info-row:last-of-type{border-bottom:none;}
+  .info-row .ic{
+    width:34px;height:34px;border-radius:50%;background:var(--paper-dim);
+    display:flex;align-items:center;justify-content:center; flex:none; color:var(--navy); font-size:15px;
+  }
+  .info-row .lbl{font-family:'IBM Plex Mono',monospace; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:3px;}
+  .info-row .val{font-size:15px; font-weight:500;}
+  .info-row a.val{text-decoration:none;}
+  .info-row a.val:hover{color:var(--copper);}
+
+  .map-frame{
+    border:1px solid var(--paper-line); border-radius:2px; overflow:hidden; min-height:340px;
+    background:var(--paper-dim);
+  }
+  .map-frame iframe{width:100%; height:100%; min-height:340px; border:0; display:block;}
+
+  form.enquiry{display:flex; flex-direction:column; gap:14px; margin-top:6px;}
+  form.enquiry label{font-family:'IBM Plex Mono',monospace; font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); margin-bottom:5px; display:block;}
+  form.enquiry input, form.enquiry textarea{
+    width:100%; padding:11px 13px; border:1px solid var(--paper-line); border-radius:2px;
+    background:var(--paper); font-family:'IBM Plex Sans',sans-serif; font-size:14.5px; color:var(--ink);
+  }
+  form.enquiry textarea{resize:vertical; min-height:90px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    background:var(--navy-deep); color:#8B93A3; padding:34px 0; text-align:center;
+    font-size:13px; border-top:4px solid var(--marigold);
+  }
+  footer strong{color:var(--paper);}
+
+  /* ---------- REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease;}
+  .reveal.in{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:900px){
+    .aisles{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .why-item:nth-child(2){border-right:none;}
+    .about .wrap{grid-template-columns:1fr;}
+    .contact-wrap{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    nav.primary{
+      position:fixed; inset:64px 0 auto 0; background:var(--navy);
+      flex-direction:column; align-items:flex-start; gap:0; padding:8px 28px 18px;
+      border-bottom:4px solid var(--marigold);
+      transform:translateY(-120%); transition:transform .3s ease; z-index:40;
+    }
+    nav.primary.open{transform:translateY(0);}
+    nav.primary a{padding:12px 0; width:100%; border-bottom:1px solid rgba(245,241,230,0.08);}
+    nav.primary .btn{margin-top:10px;}
+    .nav-toggle{display:block;}
+    .why-grid{grid-template-columns:1fr;}
+    .why-item{border-right:none;}
+  }
 </style>
 </head>
 <body>
+
 <header>
-<div><b>SHREE KRUPA</b></div>
-<nav>
-<a href="#home">Home</a>
-<a href="#products">Products</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+  <div class="header-inner">
+    <a href="#home" class="brand">
+      <span class="brand-mark">SK</span>
+      <span class="brand-text">
+        <div class="name">Shree Krupa</div>
+        <div class="tag">Electric &amp; Stationery Store</div>
+      </span>
+    </a>
+    <nav class="primary" id="primaryNav">
+      <a href="#home">Home</a>
+      <a href="#products">Products</a>
+      <a href="#why">Why Us</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:+917066355581" class="btn btn-outline">📞 Call Now</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">☰</button>
+  </div>
 </header>
 
 <section class="hero" id="home">
-<div>
-<h1>Premium Electric & Stationery Store</h1>
-<p>Your trusted destination for electrical products, office supplies, school essentials and home utility items.</p>
-<a class="btn gold" href="#products">Explore Products</a>
-<a class="btn white" href="#contact">Contact Us</a>
-</div>
+  <div class="bulb-string" aria-hidden="true">
+    <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
+    <span class="bulb"></span><span class="bulb"></span><span class="bulb"></span>
+    <span class="bulb"></span>
+  </div>
+  <div class="wrap">
+    <div class="signboard reveal in">
+      <span class="bolt tl"></span><span class="bolt tr"></span><span class="bolt bl"></span><span class="bolt br"></span>
+      <span class="eyebrow">Sainagar · Amravati</span>
+      <h1>Wired for power.<br>Stocked for <em>paper.</em></h1>
+      <p class="lede">Your neighbourhood shop for genuine electrical goods and everyday stationery — from MCBs to markers, switches to school bags.</p>
+      <div class="cta-row">
+        <a href="#products" class="btn btn-primary">Explore Products</a>
+        <a href="https://wa.me/917066355581" class="btn btn-outline" target="_blank" rel="noopener">💬 WhatsApp Us</a>
+      </div>
+      <div class="est-line">MAIN SQUARE · SAI-MANDIR RD · SAINAGAR, AMRAVATI – 444607</div>
+    </div>
+  </div>
 </section>
+
+<div class="wire-divider" role="presentation">
+  <span class="node"></span><span class="line"></span>
+  <span class="label">Browse the Aisles</span>
+  <span class="line"></span><span class="node"></span>
+</div>
 
 <section id="products">
-<h2>Our Categories</h2>
-<div class="grid">
-<div class="card"><h3>Electrical</h3><p>LED Lights, Wires, Switches, Fans, MCBs and Accessories.</p></div>
-<div class="card"><h3>Stationery</h3><p>Notebooks, Pens, Art Supplies, School & Office Essentials.</p></div>
-<div class="card"><h3>Home Essentials</h3><p>Reliable daily-use products from trusted brands.</p></div>
-</div>
-</section>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Our Categories</h2>
+      <p>Three aisles, one counter. Everything is checked for quality before it reaches the shelf.</p>
+    </div>
+    <div class="aisles">
 
-<section class="dark">
-    <h2>Why Choose Us</h2>
+      <div class="aisle-card reveal">
+        <span class="bolt tl"></span><span class="bolt br"></span>
+        <span class="aisle-tag">Aisle 01 — Electrical</span>
+        <h3>Electrical</h3>
+        <p>Wiring, lighting, switchgear and accessories for home, shop and site.</p>
+        <ul class="chip-list">
+          <li>LED bulbs &amp; tube lights</li>
+          <li>Wires &amp; cables</li>
+          <li>Switches &amp; sockets</li>
+          <li>Ceiling &amp; table fans</li>
+          <li>MCBs &amp; DB boards</li>
+          <li>Extension boards</li>
+          <li>Holders &amp; accessories</li>
+        </ul>
+      </div>
 
-    <div class="grid">
+      <div class="aisle-card reveal">
+        <span class="bolt tl"></span><span class="bolt br"></span>
+        <span class="aisle-tag">Aisle 02 — Stationery</span>
+        <h3>Stationery</h3>
+        <p>Notebooks to nib pens — everything for school, office and the artist's desk.</p>
+        <ul class="chip-list">
+          <li>Notebooks &amp; registers</li>
+          <li>Pens &amp; pencils</li>
+          <li>Art &amp; craft supplies</li>
+          <li>School bags &amp; geometry sets</li>
+          <li>Files &amp; folders</li>
+          <li>Printing &amp; paper</li>
+        </ul>
+      </div>
 
-        <div class="card">
-            <h3>✓ Genuine Products</h3>
-            <p>
-                We stock only trusted and quality-tested electrical and
-                stationery products from reliable brands, ensuring durability,
-                safety, and customer satisfaction.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>✓ Affordable Pricing</h3>
-            <p>
-                Enjoy competitive prices on all products without compromising
-                on quality. Perfect for homes, students, offices, and businesses.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>✓ Expert Guidance</h3>
-            <p>
-                Our experienced team helps customers select the right products,
-                whether it's electrical accessories or stationery essentials.
-            </p>
-        </div>
-
-        <div class="card">
-            <h3>✓ Fast & Friendly Service</h3>
-            <p>
-                We believe in building long-term relationships through quick
-                assistance, honest advice, and excellent customer support.
-            </p>
-        </div>
+      <div class="aisle-card reveal">
+        <span class="bolt tl"></span><span class="bolt br"></span>
+        <span class="aisle-tag">Aisle 03 — Home Essentials</span>
+        <h3>Home Essentials</h3>
+        <p>Reliable daily-use products from trusted brands, for the whole household.</p>
+        <ul class="chip-list">
+          <li>Batteries &amp; torches</li>
+          <li>Locks &amp; hardware</li>
+          <li>Basic tools</li>
+          <li>Plastic housewares</li>
+          <li>Cleaning essentials</li>
+        </ul>
+      </div>
 
     </div>
+  </div>
 </section>
 
-<section id="about">
-<h2>About Us</h2>
-<p style="max-width:900px;margin:auto;text-align:center">
-Shree Krupa Electric & Stationery Store delivers quality products with exceptional customer service. We help homes, students, professionals and businesses find reliable solutions at competitive prices.
-</p>
+<div class="wire-divider" role="presentation">
+  <span class="node"></span><span class="line"></span>
+  <span class="label">Why Shop With Us</span>
+  <span class="line"></span><span class="node"></span>
+</div>
+
+<section id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Why Choose Us</h2>
+      <p>Four things every customer walks out with — besides their bag.</p>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <div class="why-mark">✓</div>
+        <h3>Genuine Products</h3>
+        <p>Only trusted, quality-tested electrical and stationery products from reliable brands.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-mark">₹</div>
+        <h3>Affordable Pricing</h3>
+        <p>Competitive prices without compromising quality — for homes, students, offices and businesses.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-mark">i</div>
+        <h3>Expert Guidance</h3>
+        <p>Our team helps you pick the right product, from electrical accessories to stationery essentials.</p>
+      </div>
+      <div class="why-item">
+        <div class="why-mark">⚡</div>
+        <h3>Fast, Friendly Service</h3>
+        <p>Quick assistance and honest advice — built on long-term relationships, not one-time sales.</p>
+      </div>
+    </div>
+  </div>
 </section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="reveal">
+      <span class="eyebrow">Our Story</span>
+      <h2>About Shree Krupa</h2>
+      <p>Shree Krupa Electric &amp; Stationery Store delivers quality products with exceptional customer service. We help homes, students, professionals and businesses find reliable solutions at competitive prices — all from one counter on Sai-Mandir Road.</p>
+      <p class="about-quote">"One shop, two aisles, no compromise — that's the idea behind Shree Krupa."</p>
+    </div>
+    <div class="ledger reveal">
+      <div class="ledger-row"><span class="k">LOCATION</span><span class="v">Sainagar, Amravati</span></div>
+      <div class="ledger-row"><span class="k">CATEGORIES</span><span class="v">Electrical · Stationery · Home</span></div>
+      <div class="ledger-row"><span class="k">SERVES</span><span class="v">Homes · Students · Offices</span></div>
+      <div class="ledger-row"><span class="k">PRICING</span><span class="v">Fair &amp; Transparent</span></div>
+      <div class="ledger-row"><span class="k">SUPPORT</span><span class="v">Call · WhatsApp · Walk-in</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="wire-divider" role="presentation">
+  <span class="node"></span><span class="line"></span>
+  <span class="label">Visit or Reach Us</span>
+  <span class="line"></span><span class="node"></span>
+</div>
 
 <section id="contact">
-<h2>Contact Us</h2>
-<div class="grid">
-<div class="card"><h3>Main Square, on Sai-Mandir Rd., Sainagar, Amravati - 444607</h3><p></p></div>
-<div class="card"><h3>Phone</h3><p>+91 7066355581</p></div>
-<div class="card"><h3>Email</h3><p>shree.krupa.electricstationary@gmail.com</p></div>
-</div>
+  <div class="wrap">
+    <div class="section-head reveal">
+      <h2>Contact Us</h2>
+      <p>Walk in, call, or send a message — we're happy to help you find the right product.</p>
+    </div>
+    <div class="contact-wrap">
+
+      <div class="receipt reveal">
+        <h3>Store Details</h3>
+        <div class="info-row">
+          <span class="ic">📍</span>
+          <div>
+            <div class="lbl">Address</div>
+            <div class="val">Main Square, on Sai-Mandir Rd., Sainagar, Amravati – 444607</div>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic">📞</span>
+          <div>
+            <div class="lbl">Phone</div>
+            <a class="val" href="tel:+917066355581">+91 70663 55581</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic">💬</span>
+          <div>
+            <div class="lbl">WhatsApp</div>
+            <a class="val" href="https://wa.me/917066355581" target="_blank" rel="noopener">Chat with the store</a>
+          </div>
+        </div>
+        <div class="info-row">
+          <span class="ic">✉️</span>
+          <div>
+            <div class="lbl">Email</div>
+            <a class="val" href="mailto:shree.krupa.electricstationary@gmail.com">shree.krupa.electricstationary@gmail.com</a>
+          </div>
+        </div>
+
+        <form class="enquiry" id="enquiryForm">
+          <div>
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="e.g. Rahul Deshmukh" required>
+          </div>
+          <div>
+            <label for="need">What are you looking for?</label>
+            <textarea id="need" name="need" placeholder="e.g. 4 mm² copper wire, 20 metres" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-copper" style="align-self:flex-start;">Send Enquiry by Email</button>
+        </form>
+      </div>
+
+      <div class="map-frame reveal">
+        <iframe
+          title="Shree Krupa Electric & Stationery Store location map"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://maps.google.com/maps?q=Main%20Square%2C%20Sai-Mandir%20Rd%2C%20Sainagar%2C%20Amravati%20444607&t=&z=15&ie=UTF8&iwloc=&output=embed">
+        </iframe>
+      </div>
+
+    </div>
+  </div>
 </section>
 
-<footer>© 2026 Shree Krupa Electric & Stationery Store</footer>
+<footer>
+  <div class="wrap">
+    <div><strong>Shree Krupa Electric &amp; Stationery Store</strong> — Main Square, Sai-Mandir Rd., Sainagar, Amravati – 444607</div>
+    <div style="margin-top:6px;">© 2026 Shree Krupa Electric &amp; Stationery Store. All rights reserved.</div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const primaryNav = document.getElementById('primaryNav');
+  navToggle.addEventListener('click', () => {
+    const open = primaryNav.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    navToggle.textContent = open ? '✕' : '☰';
+  });
+  primaryNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    primaryNav.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.textContent = '☰';
+  }));
+
+  // Scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    revealEls.forEach(el => el.classList.add('in'));
+  }
+
+  // Enquiry form -> mailto
+  document.getElementById('enquiryForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const need = document.getElementById('need').value.trim();
+    const subject = encodeURIComponent('Product Enquiry from ' + name);
+    const body = encodeURIComponent(name + ' is looking for:\n\n' + need);
+    window.location.href = 'mailto:shree.krupa.electricstationary@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
+
 </body>
 </html>
